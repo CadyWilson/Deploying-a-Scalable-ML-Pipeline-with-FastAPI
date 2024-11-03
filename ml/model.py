@@ -21,7 +21,9 @@ def train_model(X_train, y_train):
     """
    # TODO: implement the function
     model = LogisticRegression()
-    pass
+    model.fit(X_train, y_train)
+    return model
+
 
 
 def compute_model_metrics(y, preds):
@@ -62,7 +64,8 @@ def inference(model, X):
     """
     # TODO: implement the function
     preds = model.predict(X)
-    pass
+    return preds
+    
 
 def save_model(model, path):
     """ Serializes model to a file.
@@ -77,7 +80,7 @@ def save_model(model, path):
     # TODO: implement the function #Perplexity searched stackoverflow for me.
     with open(path, 'wb') as file:
         pickle.dump(model, file)
-    pass
+    
 
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
@@ -85,7 +88,8 @@ def load_model(path):
 
     with open(path, 'rb') as file:
         model = pickle.load(file)
-    pass
+    return model
+    
 
 
 def performance_on_categorical_slice(
@@ -128,7 +132,6 @@ def performance_on_categorical_slice(
     sliced_data = data[data[column_name] == slice_value]
 
     X_slice, y_slice, _, _ = process_data(
-        X_slice, y_slice, _, _ = process_data(
         sliced_data,
         categorical_features=categorical_features,
         label=label,
@@ -137,7 +140,6 @@ def performance_on_categorical_slice(
         lb=lb
     )
 
-    )
     preds = model.predict(X_slice)
     precision, recall, fbeta = compute_model_metrics(y_slice, preds)
     return precision, recall, fbeta

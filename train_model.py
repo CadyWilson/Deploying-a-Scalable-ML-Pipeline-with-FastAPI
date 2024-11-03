@@ -13,7 +13,7 @@ from ml.model import (
 
 # Define the paths
 # use os.getcwd() if the absolute path doesn't work
-project_path = "/home/cady/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+project_path = os.getcwd()
 data_path = os.path.join(project_path, "data", "census.csv")
 model_path = os.path.join(project_path, "model", "model.pkl")
 encoder_path = os.path.join(project_path, "model", "encoder.pkl")
@@ -57,6 +57,8 @@ X_test, y_test, _, _ = process_data(
 
 # TODO: Use the train_model function to train the model on the training dataset
 model = train_model(X_train, y_train)
+    
+
 
 # Save the model and encoder
 save_model(model, model_path)
