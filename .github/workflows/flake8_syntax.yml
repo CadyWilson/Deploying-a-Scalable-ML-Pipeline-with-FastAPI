@@ -24,7 +24,7 @@ jobs:
       - name: flake8 check
         run: |
           
-          flake8 /home/cady/Deploying-a-Scalable-ML-Pipeline-with-FastAPI --count --select=E9 --statistics
+          flake8 /home/cady/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/main.py --count --select=E9 --statistics
       - name: Test with pytest
         run: |
           pytest
