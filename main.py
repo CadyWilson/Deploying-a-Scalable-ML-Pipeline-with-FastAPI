@@ -74,3 +74,4 @@ async def post_inference(data: Data):
     return {"result": apply_label(_inference)}
 
 # Commenting here for Github Action purposes, version 8 billion and 11
+# Now we're literally over 50 tries in. No exaggeration.
