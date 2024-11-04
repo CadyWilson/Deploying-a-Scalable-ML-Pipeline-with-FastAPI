@@ -87,8 +87,7 @@ def load_model(path):
     # TODO: implement the function
 
     with open(path, 'rb') as file:
-        model = pickle.load(file)
-    return model
+        return pickle.load(file)
     
 
 

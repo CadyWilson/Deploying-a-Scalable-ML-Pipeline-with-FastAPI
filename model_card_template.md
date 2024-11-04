@@ -3,6 +3,7 @@
 For additional information see the Model Card paper: https://arxiv.org/pdf/1810.03993.pdf
 
 ## Model Details
+The model selected for this project is a Logistic Regression Model.
 
 ## Intended Use
 
