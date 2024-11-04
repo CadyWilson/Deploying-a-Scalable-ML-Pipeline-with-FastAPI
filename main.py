@@ -72,3 +72,5 @@ async def post_inference(data: Data):
     )
     _inference = inference(model, data_processed)  # Use the inference function to get predictions
     return {"result": apply_label(_inference)}
+
+#Commenting here for Push purposes
