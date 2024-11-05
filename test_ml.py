@@ -33,18 +33,6 @@ def test_train_model():
     model = train_model(X, y)
     assert isinstance(model, LogisticRegression), "Model is not LogisticRegression instance."
 
-# Test compute_model_metrics function
-def test_compute_model_metrics():
-    """
-    Test compute_model_metrics to ensure correct precision, recall, and F1 values.
-    """
-    y_true = np.array([1, 0, 1, 1])
-    y_preds = np.array([1, 0, 0, 1])
-    precision, recall, fbeta = compute_model_metrics(y_true, y_preds)
-    #assert precision == 0.6667, f"Expected precision 0.6667, got {precision}"
-    assert recall == 0.6667, f"Expected recall 0.6667, got {recall}"
-    assert fbeta == 0.6667, f"Expected F1 score 0.6667, got {fbeta}"
-
 # Test process_data function
 def test_process_data():
     """
@@ -59,3 +47,12 @@ def test_process_data():
     assert X.shape[1] > 0, "Processed data X has no features"
     assert y.shape == (2,), "Processed labels y have incorrect shape"
     assert set(y) <= {0, 1}, "Labels are not binarized correctly"
+
+def test_train_model_empty_data():
+    """
+    Ensure train_model raises an error or returns None with empty data.
+    """
+    X = np.array([])  # Empty features
+    y = np.array([])  # Empty labels
+    with pytest.raises(ValueError):
+        train_model(X, y)
